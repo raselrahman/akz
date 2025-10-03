@@ -9,7 +9,7 @@ export default function Dashboard({ user }) {
 
   // Load all students
   useEffect(() => {
-    fetch("http://localhost:5000/students")
+    fetch("https://akz-backend.onrender.com/students")
       .then(res => res.json())
       .then(data => setStudents(data));
   }, []);
