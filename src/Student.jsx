@@ -15,7 +15,7 @@ export default function Student() {
 
   // Fetch students
   const fetchStudents = () => {
-    fetch("http://localhost/student_api/get_students.php")
+    fetch("https://akz-backend.onrender.com/student_api/get_students.php")
       .then(res => res.json())
       .then(data => setStudents(data));
   };
@@ -28,7 +28,7 @@ export default function Student() {
   // Add student
   const handleAdd = (e) => {
     e.preventDefault();
-    fetch("http://localhost/student_api/add_student.php", {
+    fetch("https://akz-backend.onrender.com/student_api/add_student.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form)
