@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-    <div style={{ padding: "20px", boxShadow: "0 0 10px rgba(0,0,0,0.1)", margin: "20px", borderRadius: "8px", backgroundColor: "#f9f9f9" }}>
+    <div style={{ padding: "20px", boxShadow: "0 0 10px rgba(0,0,0,0.1)", margin: "20px", borderRadius: "8px" }}>
       <h2>🏠 Home Page</h2>
 
 
