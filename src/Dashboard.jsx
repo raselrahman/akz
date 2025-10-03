@@ -17,7 +17,7 @@ export default function Dashboard({ user }) {
   // Add student
   const handleAddStudent = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:5000/students", {
+    const res = await fetch("https://akz-backend.onrender.com/students", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newStudent)
@@ -32,7 +32,7 @@ export default function Dashboard({ user }) {
 
   // Delete student
   const handleDelete = async (id) => {
-    const res = await fetch(`http://localhost:5000/students/${id}`, { method: "DELETE" });
+    const res = await fetch(`https://akz-backend.onrender.com/students/${id}`, { method: "DELETE" });
     if (res.ok) setStudents(students.filter(s => s.id !== id));
   };
 
@@ -42,7 +42,7 @@ export default function Dashboard({ user }) {
   // Update student
   const handleUpdate = async (e) => {
     e.preventDefault();
-    const res = await fetch(`http://localhost:5000/students/${editingStudent.id}`, {
+    const res = await fetch(`https://akz-backend.onrender.com/students/${editingStudent.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(editingStudent)
