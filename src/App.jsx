@@ -19,7 +19,7 @@ useEffect(() => {
   }
 
   // Warm-up backend (Render free service wakes up)
-  fetch("https://akz-backend.onrender.com/")
+  fetch("https://akzbackend-production.up.railway.app/")
     .then(() => console.log("Backend wake-up ping sent ✅"))
     .catch((err) => console.log("Backend still waking up... ⏳", err));
 }, []);
