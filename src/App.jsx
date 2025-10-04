@@ -11,13 +11,19 @@ import Dashboard from "./Dashboard.jsx";
 export default function App() {
   const [user, setUser] = useState(null);
 
-  // Load user from localStorage when app starts
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
-  }, []);
+useEffect(() => {
+  // Restore user from localStorage
+  const storedUser = localStorage.getItem("user");
+  if (storedUser) {
+    setUser(JSON.parse(storedUser));
+  }
+
+  // Warm-up backend (Render free service wakes up)
+  fetch("https://akz-backend.onrender.com/")
+    .then(() => console.log("Backend wake-up ping sent ✅"))
+    .catch((err) => console.log("Backend still waking up... ⏳", err));
+}, []);
+
 
   const handleLogin = (username, password) => {
     const newUser = { name: username, password }; // store both
